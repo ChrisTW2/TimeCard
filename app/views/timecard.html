@@ -1,0 +1,42 @@
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" ng-model="timecard.email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+
+  <!-- <div class="jumbotron"> -->
+  <div class="panel panel-primary">
+    <div class= "panel-heading"> TimeIn</div>
+  <div class="panel-body">
+    <!-- <label for="timeIn">Time In</label> -->
+
+    <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" ng-model="timecard.startTime" id="timeIn"/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class= "panel-heading"> TimeOut</div>
+  <div class="panel-body">
+    <!-- <label for="timeOut">Time Out</label> -->
+
+    <div class='input-group date' id='datetimepicker2'>
+        <input type='text' class="form-control" ng-model="timecard.endTime" id="timeOut"/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+  </div>
+  
+  <button type="submit" ng-click="save(timecard)" class="btn btn-primary">Submit</button>
+  <hr>
+</form>
+<div class="alert alert-success fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+<pre>timeCards = {{timeCards | json}}</pre>
